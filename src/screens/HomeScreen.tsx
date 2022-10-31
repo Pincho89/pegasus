@@ -25,28 +25,28 @@ const HomeScreen =({ navigation }: Props)=> {
             <View style={{flexDirection:'row',}}>
                 <TouchableOpacity
                     style={{ 
-                        ...styles.botonFlatList,
+                        ...styles.botonFlatList,backgroundColor:'orange'
                     }}
-                    onPress={ () => navigation.navigate('ListaMateriasScreen')}
+                    onPress={ () => navigation.navigate('ListaCursosScreen')}
                 >
                     <View style={styles.containerTexto} >
                     <Text style={ styles.textoFlatlist }>Calificaciones</Text>
                         <View style={styles.box}>
-                            <Icon name="file-text" size={45} color="black" />
+                            <Icon name="edit-2" size={45} color="black" />
                         </View>
                     </View>
                 </TouchableOpacity>
 
                 <TouchableOpacity
                     style={{ 
-                        ...styles.botonFlatList,
+                        ...styles.botonFlatList,backgroundColor:'orange'
                     }}
-                    onPress={ () => navigation.navigate('ListaMateriasScreen')}
+                    onPress={ () => navigation.navigate('ListaCursosAsistenciaScreen')}
                 >
                     <View style={styles.containerTexto} >
                     <Text style={ styles.textoFlatlist }>Asistencias</Text>
                         <View style={styles.box}>
-                            <Icon name="file-text" size={45} color="black" />
+                            <Icon name="user-check" size={45} color="black" />
                         </View>
                     </View>
                 </TouchableOpacity>   
@@ -55,28 +55,28 @@ const HomeScreen =({ navigation }: Props)=> {
             <View style={{flexDirection:'row',marginTop:10}}>
                 <TouchableOpacity
                     style={{ 
-                        ...styles.botonFlatList,
+                        ...styles.botonFlatList,backgroundColor:'green'
                     }}
                     onPress={ () => navigation.navigate('ListaContactosScreen')}
                 >
                     <View style={styles.containerTexto} >
                     <Text style={ styles.textoFlatlist }>Contactos</Text>
                         <View style={styles.box}>
-                            <Icon name="bluetooth" size={45} color="black" />
+                            <Icon name="phone-call" size={45} color="black" />
                         </View>
                     </View>
                 </TouchableOpacity>
 
                 <TouchableOpacity
                     style={{ 
-                        ...styles.botonFlatList,
+                        ...styles.botonFlatList,backgroundColor:'green'
                     }}
                     onPress={ () => navigation.navigate('ListaEventosScreen')}
                 >
                     <View style={styles.containerTexto} >
                     <Text style={ styles.textoFlatlist }>Eventos</Text>
                         <View style={styles.box}>
-                            <Icon name="file-text" size={45} color="black" />
+                            <Icon name="calendar" size={45} color="black" />
                         </View>
                     </View>
                 </TouchableOpacity>  
@@ -85,28 +85,28 @@ const HomeScreen =({ navigation }: Props)=> {
             <View style={{flexDirection:'row',marginTop:10}}>
                 <TouchableOpacity
                     style={{ 
-                        ...styles.botonFlatList,
+                        ...styles.botonFlatList,backgroundColor:'orange'
                     }}
-                    onPress={ () => navigation.navigate('ListaMateriasScreen')}
+                    onPress={ () => navigation.navigate('ListaCursosScreen')}
                 >
                     <View style={styles.containerTexto} >
                     <Text style={ styles.textoFlatlist }>Cursos</Text>
                         <View style={styles.box}>
-                            <Icon name="file-text" size={45} color="black" />
+                            <Icon name="info" size={45} color="black" />
                         </View>
                     </View>
                 </TouchableOpacity>
 
                 <TouchableOpacity
                     style={{ 
-                        ...styles.botonFlatList,
+                        ...styles.botonFlatList,backgroundColor:'orange'
                     }}
                     onPress={ () => navigation.navigate('ListaCuadernoScreen')}
                 >
                     <View style={styles.containerTexto} >
                     <Text style={ styles.textoFlatlist }>Cuaderno</Text>
                         <View style={styles.box}>
-                            <Icon name="file-text" size={45} color="black" />
+                            <Icon name="book" size={45} color="black" />
                         </View>
                     </View>
                 </TouchableOpacity>  
@@ -115,28 +115,28 @@ const HomeScreen =({ navigation }: Props)=> {
             <View style={{flexDirection:'row',marginTop:10}}>
                 <TouchableOpacity
                     style={{ 
-                        ...styles.botonFlatList,
+                        ...styles.botonFlatList,backgroundColor:'orange'
                     }}
-                    onPress={ () => navigation.navigate('ListaMateriasScreen')}
+                    onPress={ () => navigation.navigate('ListaCursosScreen')}
                 >
                     <View style={styles.containerTexto} >
                     <Text style={ styles.textoFlatlist }>Materias</Text>
                         <View style={styles.box}>
-                            <Icon name="file-text" size={45} color="black" />
+                            <Icon name="info" size={45} color="black" />
                         </View>
                     </View>
                 </TouchableOpacity>
 
                 <TouchableOpacity
                     style={{ 
-                        ...styles.botonFlatList,
+                        ...styles.botonFlatList,backgroundColor:'orange'
                     }}
                     onPress={ () => navigation.navigate('ListaContactosScreen')}
                 >
                     <View style={styles.containerTexto} >
                     <Text style={ styles.textoFlatlist }>Tareas</Text>
                         <View style={styles.box}>
-                            <Icon name="file-text" size={45} color="black" />
+                            <Icon name="book-open" size={45} color="black" />
                         </View>
                     </View>
                 </TouchableOpacity>  
@@ -152,7 +152,7 @@ const HomeScreen =({ navigation }: Props)=> {
                     <View style={styles.containerTexto} >
                     <Text style={ styles.textoFlatlist }>Desempeño</Text>
                         <View style={styles.box}>
-                            <Icon name="file-text" size={45} color="black" />
+                            <Icon name="award" size={45} color="black" />
                         </View>
                     </View>
                 </TouchableOpacity>
@@ -166,7 +166,7 @@ const HomeScreen =({ navigation }: Props)=> {
                     <View style={styles.containerTexto} >
                     <Text style={ styles.textoFlatlist }>Usuarios</Text>
                         <View style={styles.box}>
-                            <Icon name="file-text" size={45} color="black" />
+                            <Icon name="users" size={45} color="black" />
                         </View>
                     </View>
                 </TouchableOpacity>  
@@ -175,14 +175,14 @@ const HomeScreen =({ navigation }: Props)=> {
             <View style={{flexDirection:'row',marginTop:10}}>
                 <TouchableOpacity
                     style={{ 
-                        ...styles.botonFlatList,
+                        ...styles.botonFlatList,backgroundColor:'orange'
                     }}
                     onPress={ () => navigation.navigate('ListaPagosScreen')}
                 >
                     <View style={styles.containerTexto} >
                     <Text style={ styles.textoFlatlist }>Pagos</Text>
                         <View style={styles.box}>
-                            <Icon name="file-text" size={45} color="black" />
+                            <Icon name="dollar-sign" size={45} color="black" />
                         </View>
                     </View>
                 </TouchableOpacity>

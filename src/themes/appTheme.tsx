@@ -57,7 +57,9 @@ export const styles = StyleSheet.create({
         position:'relative',
         marginLeft:5,
         marginTop:5,
-        justifyContent:'center'
+        justifyContent:'center',
+        
+        
     },
     boxImagen:{
         backgroundColor:'black',
@@ -98,6 +100,19 @@ export const styles = StyleSheet.create({
         //marginLeft:'35%',
         alignItems: 'center',
         justifyContent: 'space-around',
+    },
+
+    //Lista Cursos
+    menuContainerCursos: {
+        //marginVertical: 30,
+        //marginHorizontal: 50,
+        alignItems: 'center',
+        justifyContent: 'center',
+        flex: 0.5,
+        //backgroundColor:'red',
+        flexDirection:'column',
+        //marginTop:100,
+        //position:'relative',
     },
 
     //Lista Materias
@@ -178,10 +193,40 @@ export const styles = StyleSheet.create({
         color:'#6EA4F4'
     },
 
-
+    //Eventos
+    botonEventos:{
+        width: 340,
+        height:110,
+        backgroundColor: 'white',
+        borderRadius:20,
+        marginRight: 10,
+        borderColor: '#6EA4F4',
+        borderWidth: 1,
+        marginBottom:15,
+    },
+    
+    //Texto Evento
+    textoEvento:{
+        fontSize: 14,
+        fontFamily: 'Gilroy-ExtraLight',
+        color: 'black',
+        marginLeft:10,    
+        textAlign: 'center',            
+    },
 
     //Contacto Institucion
 
+    botonContactoInstitucion:{
+        width: 250,
+        height:60,
+        backgroundColor: 'white',
+        borderRadius:20,
+        marginRight: 10,
+        borderColor: '#6EA4F4',
+        borderWidth: 1,
+        marginBottom:15,
+        
+    },
     menuContainerDatosInstitucion: {
         justifyContent: 'space-around',
         flex: 0.5,
@@ -191,6 +236,13 @@ export const styles = StyleSheet.create({
         marginBottom:'25%',
     },
      boxContacto:{
+        height:100,
+        width:100,
+        borderRadius:50,
+        marginTop:5,
+        resizeMode: 'contain',
+    }, 
+    boxEvento:{
         height:100,
         width:100,
         borderRadius:50,

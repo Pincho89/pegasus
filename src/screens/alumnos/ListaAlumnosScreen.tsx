@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Text, Switch, View, TouchableOpacity } from 'react-native';
+import { Text, Switch, View, TouchableOpacity, ActivityIndicator } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { styles } from '../../themes/appTheme';
 
@@ -7,48 +7,34 @@ import Icon from 'react-native-vector-icons/Feather';
 import { CustomSwitch } from "../../components/CustomSwitch";
 
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { MostrarAlumno } from "../../components/MostrarAlumno";
+import { FilerByCurso } from '../../hooks/FilerByCurso';
 
 interface Props extends NativeStackScreenProps<any,any>{};
 
-const ListaAlumnosScreen =({ navigation }:Props)=> {
+const ListaAlumnosScreen =({ navigation,route }:Props)=> {
 
+let curso = route.params?.curso.toString();
+let materia = route.params?.materia.toString();
 
-  const [state, setState] = useState({
-    isActive: true,
-    isHungry: false,
-    isHappy: true
-});
+const { alumnosCursos,isLoading } = FilerByCurso(curso); 
 
-  const { isActive, isHungry, isHappy } = state;
-
-  const onChange = ( value: boolean, field: string ) => {
-    setState({
-        ...state,
-        [field]: value
-    });
-  }
-
+   if (isLoading) {
+    return (
+    <View style={{flex:1, justifyContent:'center',alignItems:'center',backgroundColor: "#E6EBF1"}}>
+        <ActivityIndicator  color="red" size={100}/>
+    </View>
+    )
+    }
 
     return (
       <View style={styles.fondoApp}>
       <SafeAreaView><Text style={styles.title}>Alumnos</Text></SafeAreaView>       
       <SafeAreaView style={styles.menuContainerDatosAlumnos}>
-        
-          <Text style={ styles.textoAlumnos }> 
-            <Icon name="user" size={25} color={"black"}/>  Lucas Castro
-            <CustomSwitch isOn={ isActive } onChange={ (value) => onChange( value, 'isActive' ) } />
-          </Text>
 
-
-          <Text style={ styles.textoAlumnos }> 
-            <Icon name="user" size={25} color={"black"}/>  Santiago Linares
-            <CustomSwitch isOn={ isHungry } onChange={ (value) => onChange( value, 'isHungry' ) } />
-          </Text>
-
-          <Text style={ styles.textoAlumnos }> 
-            <Icon name="user" size={25} color={"black"}/>  Rodrigo Castro
-            <CustomSwitch isOn={ isHappy } onChange={ (value) => onChange( value, 'isHappy' ) } />
-          </Text>
+          {  //Renderizo todo los objetos
+            alumnosCursos.map(item=><MostrarAlumno alumno={item} key={item.id}/>)
+          }
 
       </SafeAreaView>
       <View style={{marginTop:30}}></View>

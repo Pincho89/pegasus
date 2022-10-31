@@ -1,17 +1,61 @@
 import React from 'react'
-import { Text, TouchableOpacity, View, Image } from 'react-native';
+import { Text, TouchableOpacity, View, Image, ActivityIndicator,FlatList } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { styles } from '../../themes/appTheme';
 
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { useDatas } from '../../hooks/useDatas';
+import { InfoContactosInstitucion } from '../../components/InfoContactosInstitucion';
 
 interface Props extends NativeStackScreenProps<any,any>{};
 
 const DatosInstitucionScreen =({ navigation }:Props)=> {
+
+    const { contactos,isLoading } = useDatas();
+
+    if (isLoading) {
+        return (
+        <View style={{flex:1, justifyContent:'center',alignItems:'center',backgroundColor: "#E6EBF1"}}>
+            <ActivityIndicator  color="red" size={100}/>
+        </View>
+        )
+    }
+
+    const ItemSeparator = () =>{
+        return(
+          <View style={{
+            borderBottomWidth: 0,
+            opacity:0.4,
+            marginVertical:8}}>
+            
+          </View>
+        )
+      }
+
+    function renderItem (){
+        contactos.forEach(element => {
+            return(
+                <View>
+                      <TouchableOpacity
+                          style={{ 
+                              ...styles.botonContactoInstitucion,
+                          }}
+                          onPress={ () => navigation.navigate('DetalleEventoScreen',element)}
+                      >
+                          <View style={{justifyContent:'flex-start',alignContent:'center'}}>
+                              <InfoContactosInstitucion contacto={element}/>
+                          </View>
+                      </TouchableOpacity>
+                </View> 
+              )
+        });
+      }
+
+
     
     return (
     <View style={styles.fondoApp}>
-    <SafeAreaView><Text style={styles.title}>Institución</Text></SafeAreaView>       
+    <SafeAreaView><Text style={styles.title}>Institucion</Text></SafeAreaView>       
     <SafeAreaView style={styles.menuContainerDatosInstitucion}>
         <View style={styles.boxContactoContainer}>
             <Image
@@ -20,17 +64,55 @@ const DatosInstitucionScreen =({ navigation }:Props)=> {
             />
         </View>
     </SafeAreaView>
-        <View style={{marginBottom:20}} > 
-            <Text style={styles.mostrarLabel}>Correo:           ___________________________________</Text>
-            <Text style={styles.mostrarLabel}>Direccion:       ___________________________________</Text>
-            <Text style={styles.mostrarLabel}>Telefono:         ___________________________________</Text>
-        </View>
+        <View>
+                <TouchableOpacity
+                    disabled={true}
+                    style={{ 
+                        ...styles.botonContactoInstitucion,
+                    }}
+                    //onPress={ () => navigation.navigate('DetalleEventoScreen',element)}
+                >
+                    <View style={{justifyContent:'flex-start',alignContent:'center'}}>
+                        <InfoContactosInstitucion contacto={contactos[0]}/>
+                    </View>
+                </TouchableOpacity>
+                
+                <TouchableOpacity
+                    disabled={true}
+                    style={{ 
+                        ...styles.botonContactoInstitucion,
+                    }}
+                    //onPress={ () => navigation.navigate('DetalleEventoScreen',element)}
+                >
+                    <View style={{justifyContent:'flex-start',alignContent:'center'}}>
+                        <InfoContactosInstitucion contacto={contactos[1]}/>
+                    </View>
+                </TouchableOpacity>
 
-        <View style={styles.boxContainerInfoDatos}>
-            <Text style={styles.mostrarInfo}>Rectora: Maria Gomez</Text>
-            <Text style={styles.mostrarInfo}>Vice Rectora: Beatriz Alvarez </Text>
-            <Text style={styles.mostrarInfo}>Preceptor: Ignacion Fuentes </Text>
-        </View>
+                <TouchableOpacity
+                    disabled={true}
+                    style={{ 
+                        ...styles.botonContactoInstitucion,
+                    }}
+                    //onPress={ () => navigation.navigate('DetalleEventoScreen',element)}
+                >
+                    <View style={{justifyContent:'flex-start',alignContent:'center'}}>
+                        <InfoContactosInstitucion contacto={contactos[2]}/>
+                    </View>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                    disabled={true}
+                    style={{ 
+                        ...styles.botonContactoInstitucion,
+                    }}
+                    //onPress={ () => navigation.navigate('DetalleEventoScreen',element)}
+                >
+                    <View style={{justifyContent:'flex-start',alignContent:'center'}}>
+                        <InfoContactosInstitucion contacto={contactos[3]}/>
+                    </View>
+                </TouchableOpacity>
+        </View> 
     </View>
   )
 }

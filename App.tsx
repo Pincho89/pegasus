@@ -2,7 +2,7 @@ import { NavigationContainer} from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 import HomeScreen from './src/screens/HomeScreen';
-import ListaMateriasScreen from './src/screens/ListaMateriasScreen';
+import ListaMateriasScreen from './src/screens/alumnos/ListaMateriasScreen';
 
 //Modulo Contacto
 import ListaContactosScreen from './src/screens/contacto/ListaContactosScreen';
@@ -12,9 +12,11 @@ import ListaDocentesScreen from './src/screens/contacto/ListaDocentesScreen';
 //Modulo Alumnos
 import ListaAlumnosScreen from './src/screens/alumnos/ListaAlumnosScreen';
 import ListaReporteScreen from './src/screens/alumnos/ListaReporteScreen';
+import ListaCursosAsistenciaScreen from './src/screens/alumnos/ListaCursosAsistenciaScreen';
 
 //Modulo Eventos
 import ListaEventosScreen from './src/screens/eventos/ListaEventosScreen';
+import DetalleEventoScreen from './src/screens/eventos/DetalleEventoScreen';
 
 //Modulo Cuaderno
 import ListaCuadernoScreen from './src/screens/cuaderno/ListaCuadernoScreen';
@@ -24,6 +26,9 @@ import ListaDesempenioScreen from './src/screens/desempenio/ListaDesempenioScree
 
 //Modulo Pagos
 import ListaPagosScreen from './src/screens/pagos/ListaPagosScreen';
+
+//Modulo Cursos
+import ListaCursosScreen from './src/screens/ListaCursosScreen';
 
 const App = () => {
 
@@ -37,13 +42,20 @@ const Stack = createNativeStackNavigator();
         <Stack.Screen name="ListaMateriasScreen" component={ListaMateriasScreen} options={{headerShown:false}} />
         <Stack.Screen name="ListaAlumnosScreen" component={ListaAlumnosScreen} options={{headerShown:false}} />
         <Stack.Screen name="ListaReporteScreen" component={ListaReporteScreen} options={{headerShown:false}} />
+        <Stack.Screen name="ListaCursosAsistenciaScreen" component={ListaCursosAsistenciaScreen} options={{headerShown:false}} />
+
+
         <Stack.Screen name="ListaContactosScreen" component={ListaContactosScreen} options={{headerShown:false}} />
         <Stack.Screen name="DatosInstitucionScreen" component={DatosInstitucionScreen} options={{headerShown:false}} />
         <Stack.Screen name="ListaDocentesScreen" component={ListaDocentesScreen} options={{headerShown:false}} />
+        
         <Stack.Screen name="ListaEventosScreen" component={ListaEventosScreen} options={{headerShown:false}} />
+        <Stack.Screen name="DetalleEventoScreen" component={DetalleEventoScreen} options={{headerShown:false}} />
+        
         <Stack.Screen name="ListaCuadernoScreen" component={ListaCuadernoScreen} options={{headerShown:false}} />
         <Stack.Screen name="ListaDesempenioScreen" component={ListaDesempenioScreen} options={{headerShown:false}} />
         <Stack.Screen name="ListaPagosScreen" component={ListaPagosScreen} options={{headerShown:false}} />
+        <Stack.Screen name="ListaCursosScreen" component={ListaCursosScreen} options={{headerShown:false}} />
         
 
       </Stack.Navigator>
