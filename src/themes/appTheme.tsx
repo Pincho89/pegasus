@@ -44,10 +44,10 @@ export const styles = StyleSheet.create({
         flex: 0.5,
     },
     botonFlatList:{
-        width: 120,
+        width: 100,
         height: 90,
         backgroundColor: 'white',
-        borderRadius: 10,
+        borderRadius: 20,
         marginRight: 10,
         borderColor: '#6EA4F4',
         borderWidth: 1,
@@ -55,10 +55,11 @@ export const styles = StyleSheet.create({
     },
     containerTexto:{
         position:'relative',
-        marginLeft:5,
-        marginTop:5,
+        //marginLeft:5,
+        //marginTop:5,
         justifyContent:'center',
-        
+        textAlign: 'center',
+        alignItems: 'center',
         
     },
     boxImagen:{
@@ -74,15 +75,18 @@ export const styles = StyleSheet.create({
         height:50,
         width:50,
         borderRadius:20,
-        marginLeft:25,
-        marginTop:5,
         resizeMode: 'contain',
+        alignItems: 'center',
+        
     }, 
     textoFlatlist: {
-        fontSize: 16,
+        fontSize: 14,
         fontFamily: 'Gilroy-ExtraLight',
         color: 'black',
-        marginLeft:10,
+        textAlign: 'center',
+        justifyContent:'center',
+        alignItems: 'center',
+        marginTop:10
                 
     },
     subtextoFlatlist: {
